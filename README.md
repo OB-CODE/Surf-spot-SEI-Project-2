@@ -25,8 +25,8 @@ Database project storing surf details through a CRUD app. Full-stack development
 
 ## 🗒️ - Planning & Problem Solving
 
-<img src="./surf-wireframe.png" alt="drawing" width="50%" heigh="50%"/>
-<img src="./surf-starting plan.png" alt="drawing" width="50%" heigh="50%"/>
+<img src="./images/surf-wireframe.png" alt="drawing" width="50%" heigh="50%"/>
+<img src="./images/surf-starting plan.png" alt="drawing" width="50%" heigh="50%"/>
 
 ---
 
