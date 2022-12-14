@@ -62,7 +62,9 @@ put '/surf/:id' do
 end
 
 delete '/surf/:id' do
-
+  id = params['id']
   
-  "Hello World"
+  run_sql('DELETE FROM locations WHERE id = $1', [id])
+
+  redirect '/'
 end
