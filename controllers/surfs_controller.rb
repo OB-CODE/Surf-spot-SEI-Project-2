@@ -69,3 +69,11 @@ delete '/surf/:id' do
 
   redirect '/'
 end
+
+post '/surf/:id/likes' do
+  spot_id = params['id']
+  user_id = session['user_id']
+
+  run_sql("INSERT INTO likes(user_id, spot_id) VALUES($1, $2)", [user_id, spot_id])
+  redirect '/'
+end

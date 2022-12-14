@@ -205,6 +205,11 @@ body {
     align-items: center;
     justify-content: space-evenly;
   }
+  .right-head-col-spaced, #logOut {
+    font-size: 0.6rem;
+    flex-direction: column;
+
+  }
 }
 
 @media screen and (min-width: 1224px) {
@@ -357,7 +362,20 @@ button {
   text-decoration: underline;
 }
 
+/* MEDIA QUERY for main items */
+@media screen and (max-width: 650px) {
+  main a,
+  button {
+    font-size: 0.8rem;
+}
+}
 
+@media screen and (max-width: 750px) {
+  .right-head-col-spaced {
+    font-size: 0.8rem;
+    flex-direction: column;
+  }
+}
 /* For the sign up page */
 
 .sing_up_style > * {

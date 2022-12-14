@@ -38,3 +38,19 @@ CREATE TABLE users(
   admin_stat BOOLEAN
 );
 
+-- admin log in
+-- INSERT INTO users 2, Mitch, O'Brien, MOB, test, 1;
+UPDATE users
+SET admin_stat = true
+WHERE email = 'MOB';
+
+
+CREATE TABLE likes(
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER,
+  spot_id INTEGER
+);
+
+ALTER TABLE likes
+ADD CONSTRAINT unique_likes
+UNIQUE(user_id, spot_id);

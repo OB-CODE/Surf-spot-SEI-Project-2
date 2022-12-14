@@ -12,7 +12,6 @@
         <div class="middle-head-col">
           <p>Surf-Spot</p>
         </div>
-        <div class="weather">Today's forcast:</div>
 
         <% if !logged_in? %>
          <div class="right-head-col">
@@ -37,8 +36,9 @@
       <p class="catch-phrase">Surf spots rated by the community, for the community!</p>
     </div>
     <div class="links">
+      <div class="weather">Today's forcast:</div>
       <a href="" class="set-location">SET YOUR LOCATION</a>
-      <a href="" class="locations">FIND A SURF SPOT</a>
+      <a href="/" class="locations">FIND A SURF SPOT</a>
       <a href="" class="boards">SURFBOARDS</a>
       <a href="/users/new" class="sign-up">SIGN UP</a>
     </div>
@@ -70,7 +70,6 @@
     <div class="right_controls">
     <button>Sort by Top rated</button>
     <button>Sort by Distance</button>
-    <button>Log out</button>
     </div>
   </div>
 
@@ -84,20 +83,26 @@
       <section class="spot">
         <header>
           <h2><%= spot['name'] %></h2>
-        
+
+
         <section class="each_spot_controls">
+          <% if logged_in? %>
+                  <%# This will be only for ADMIN  - Need to get If ADMIN working%>
+
           <a href="/surf/<%= spot['id'] %>/edit">Edit</a>
           
-          <%# This will be only for ADMIN %>
           <form action="/surf/<%= spot['id'] %>" method="POST">
             <input type="hidden" name="_method" value="delete">
             <button>Delete</button>
           </form>
+          <% end %>
 
-          <%# this will be for users %>
+
+        <% if logged_in? %>
           <form action="/surf/<%= spot['id'] %>/likes" method="POST">
           <button>Like</button>
           </form>
+        <% end %>
 
         </section>
 

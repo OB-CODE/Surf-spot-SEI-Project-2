@@ -13,3 +13,13 @@ def current_user
     nil
   end
 end
+
+
+# NOT WORKING YET
+def is_admin?
+  if session['admin_status'] == true
+    return true
+  else 
+    return false
+  end
+end
