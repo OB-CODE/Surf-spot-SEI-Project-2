@@ -44,12 +44,16 @@ Database project storing surf details through a CRUD app. Full-stack development
 
 ## :bug: Bugs to fix
 
-- No known bugs at this point.
+- No weather API linked.
 
 ---
 
 ## :sob: Lessons learnt
 
+- Started with CSS layout in mind. So far, so good.
+
 ---
 
 ## :white_check_mark: Cool things I would add if I can keep working on this
+
+- CSS desing. Knowing this was an area I was not skilled in prior to the project, I made an effort to make it a top priority around responsive design. I am happy with the achievements made, however would love to continue my knwoeldge in this area.

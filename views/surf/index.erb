@@ -46,3 +46,54 @@
 
 </header>
 
+<main>
+  <div class="control_container">
+    <a href="/surf/new">Add New Surf Spot</a>
+    <div class="right_controls">
+    <button>Sort by Top rated</button>
+    <button>Sort by Distance</button>
+    <button>Log out</button>
+    </div>
+  </div>
+
+  <section class="controls">
+  
+  </section>
+
+
+  <section class="surf_spots">
+    <% locations.each do |spot| %>
+      <section class="spot">
+        <header>
+          <h2><%= spot['name'] %></h2>
+        
+        <section class="each_spot_controls">
+          <a href="/surf/<%= spot['id'] %>/edit">Edit</a>
+          
+          <%# This will be only for ADMIN %>
+          <form action="/surf/<%= spot['id'] %>" method="POST">
+            <input type="hidden" name="_method" value="delete">
+            <button>Delete</button>
+          </form>
+
+          <%# this will be for users %>
+          <form action="/surf/<%= spot['id'] %>/likes" method="POST">
+          <button>Like</button>
+          </form>
+
+        </section>
+
+        </header>
+
+        <img src="<%= spot['image_url'] %>" alt="">
+        <div>(1 Beginner to 10 Expert) = <%= spot['surf_experience'] %></div>
+        <div>Expected Crowd: <%= spot['crowd'] %></div>
+        <div>Hazards to watch out for: <%= spot['hazards'] %></div>
+        <div>Getting to the beach: <%= spot['access'] %></div>
+        <div>You are surfing on: <%= spot['ocean_bottom'] %></div>
+      </section>
+    <% end %>
+  </section>
+
+</main>
+
