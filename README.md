@@ -29,7 +29,6 @@ Database project storing surf details through a CRUD app. Full-stack development
 <p align="center" width="100%">
 <img src="./images/surf-starting plan.png" alt="flow" width="50%" heigh="50%"/>
 </p>
-
 ---
 
 ## 🧰: Tech
@@ -38,6 +37,8 @@ Database project storing surf details through a CRUD app. Full-stack development
 - Ruby Gems: Sinatra, puma, pg, bcyrpt, httparty.
 - API requests.
 - SQL databases.
+
+- Location pin adapted from: https://codepen.io/mahdiarjangi/pen/KKKZZjZ
 
 ---
 

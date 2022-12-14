@@ -1,0 +1,215 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(235, 248, 250);
+}
+
+/* All CSS for the header bar at the top of the INDEX web pages */
+
+.grey-back {
+  background-color: rgb(213, 210, 210);
+  border: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+
+.grey-back p {
+  margin: 5px;
+}
+
+.hidden-sponsor {
+  display: none;
+}
+
+.logo-container {
+  padding-left: 25px;
+  padding-right: 25px;
+  display: block;
+  background-color: white;
+}
+
+  .header-grid {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    padding-top: 1.1em;
+    padding-bottom: 1.2em;
+    justify-content: space-evenly;
+
+  }
+    .left-head-col {
+      display: flex;
+      flex: 1;
+      justify-content: flex-start;
+    }
+
+      .location-pin {
+        width: 40px ;
+        height: 40px ;
+        background-color: #b00c33 ;
+        border-radius: 60px 60px 0px 60px ;
+        position:relative ;
+        transform: rotate(45deg);
+      }
+        .location-pin::after {
+          content: "" ;
+          width: 20px ;
+          height: 20px ;
+          background: rgb(255, 255, 255) ;
+          position: absolute ;
+          left: 26% ;
+          top: 26% ;
+          border-radius: 60px ;
+        }
+
+    .middle-head-col {
+      display: flex;
+      flex 1;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    .weather {
+      display: none
+    }
+
+    .right-head-col {
+      display: flex;
+      align-items: center;
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+.black-back, .links, .links > * {
+  background-color: rgb(34, 34, 34);
+  color: whitesmoke;
+  text-align: center;
+  border: 0;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+
+.links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.index_header {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+.index_header img {
+ position: relative;
+}
+
+.top-box {
+  position: absolute;
+  padding-left: 20px;
+  padding-right: 0;
+  top: 20px;
+}
+
+.thumbnail-text {
+  font-size: 1.4rem;
+}
+
+.bot-box {
+  position: absolute;
+  padding-left: 40px;
+  padding-right: 0;
+  bottom: 40px;
+  font-size: 3rem;
+  color: whitesmoke;
+}
+
+/* Media responsiveness for top of page header */
+
+@media screen and (max-width: 600px) {
+  .links, .links > * {
+    font-size: 0.8rem;
+    padding: 3px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  body {
+    font-size: 0.8rem;
+  }
+  .grey-back, .black-back {
+    font-size: 0.6rem;
+  }
+  .black-back {
+    padding: 2px;
+  }
+  .catch-phrase {
+    display: none;
+  }
+
+  .header-grid {
+    padding: 4px;
+    align-items: center;
+  }
+  .links, .links > * {
+    display: block;
+    font-size: 0.7rem;
+    padding: 2px;
+  }
+  .location-pin {
+    width: 20px ;
+    height: 20px ;
+  }
+  .location-pin::after {
+    width: 10px ;
+    height: 10px ;
+  }
+
+  .thumbnail-text {
+    font-size: 0.7rem;
+  }
+
+  .thumbnail-text-2 {
+    font-size: 0.5rem;
+  }
+  .bot-box {
+    display: none;
+  }
+
+}
+
+@media screen and (min-width: 1224px) {
+  .grey-back, .black-back {
+    font-size: 1.5rem;
+  }
+  .header-grid > * {
+    align-items: center;
+    font-size: 2rem;
+  }
+  .hidden-sponsor {
+    display: block;
+    color: rgb(77, 44, 8);
+    text-transform: uppercase;
+  }
+  .left-head-col::after {
+    content: "Your location: ";
+    padding-left: 20px;
+  }
+  .weather {
+    display: flex;
+    display: flex 1;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 100px;
+  }
+  .middle-head-col {
+    padding-right: 100px;
+  }
+  .bot-box {
+    bottom: 100px;
+  }
+}
