@@ -4,7 +4,7 @@ Database project storing surf details through a CRUD app. Full-stack development
 
 ---
 
-## :surfer: :surfing_man: :surfing_woman: Page url:
+## :surfer: :surfing_man: :surfing_woman: Page url: https://surf.fly.dev/
 
 ---
 
