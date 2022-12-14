@@ -1,9 +1,12 @@
 get '/' do
+  # API to remove later
+  movie = HTTParty.get("http://omdbapi.com?apikey=#{ENV['OMDB_API_KEY']}&t=jaws")
 
   locations = all_locations()
 
   erb :'surf/index', locals: {
-    locations: locations
+    locations: locations,
+    movie_plot: movie['Plot']
   }
 end
 
