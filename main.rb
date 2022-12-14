@@ -22,11 +22,6 @@ require './helpers/sessions_helper'
 
 
 
-get '/' do
-  erb :index
-end
-
-
 
 
 
