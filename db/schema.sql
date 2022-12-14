@@ -15,3 +15,12 @@ CREATE TABLE locations(
 INSERT INTO locations(name, image_url, surf_experience, crowd, hazards, access, ocean_bottom)
 VALUES
 ('Maroubrah', 'https://maps.randwick.nsw.gov.au/public/images/facilities/Maroubra-Beach-768x250.jpg', 'intermediate', 'busy', 'rocks and rip at south end, scattered rocks at north end. Heavy beach break with agressive impact zone.', 'Road access, multiple parking sport inclduing free parking', 'Beack break - sand');
+
+
+CREATE TABLE users(
+  id SERIAL PRIMARY KEY,
+  first_name TEXT,
+  last_name TEXT,
+  email TEXT,
+  admin BOOL
+);
