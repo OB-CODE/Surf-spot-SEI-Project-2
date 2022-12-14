@@ -29,9 +29,10 @@ end
 
 
 get '/surf/:id/edit' do
-  # if !logged_in?
-  #   redirect '/'
-  # end
+  if !logged_in?
+    redirect '/'
+  end
+  
   id = params['id']
 
   location = get_locations(id)

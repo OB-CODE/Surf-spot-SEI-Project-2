@@ -13,9 +13,24 @@
           <p>Surf-Spot</p>
         </div>
         <div class="weather">Today's forcast:</div>
-        <div class="right-head-col">
-           <a href="" class="log-in">LOG IN</a> 
+
+        <% if !logged_in? %>
+         <div class="right-head-col">
+            <a href="/sessions/new" class="log_in">LOG IN</a> 
         </div>
+        <% end %>
+
+        <% if logged_in? %>
+          <div class="right-head-col-spaced">
+            <div> Welcome: <%= current_user['first_name'] %> </div>
+              <section>
+                <form action="/sessions" method="POST">
+                  <input type="hidden" name="_method" value="delete">
+                  <button id="logOut">Log out</button>
+                </form>
+              </section>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="black-back">
@@ -23,12 +38,13 @@
     </div>
     <div class="links">
       <a href="" class="set-location">SET YOUR LOCATION</a>
-      <a href="" class="locations">SURF LOCATIONS</a>
+      <a href="" class="locations">FIND A SURF SPOT</a>
       <a href="" class="boards">SURFBOARDS</a>
-      <a href="/users/new" class="sign-up">SING UP</a>
+      <a href="/users/new" class="sign-up">SIGN UP</a>
     </div>
   </div>
 </div>
+
 
 
 <header class="default">
@@ -48,6 +64,9 @@
 <main>
   <div class="control_container">
     <a href="/surf/new">Add New Surf Spot</a>
+
+   
+
     <div class="right_controls">
     <button>Sort by Top rated</button>
     <button>Sort by Distance</button>
