@@ -130,13 +130,13 @@
 
   <div class="together" id="green_back">
     <label for="">Latitude</label>
-    <input type="text" name="latitude">
+    <input type="text" name="latitude" value="<%= location['latitude'] %>">
   </div>
 
 
   <div class="together" id="green_back">
     <label for="">Longitude</label>
-    <input type="text" name="longitude">
+    <input type="text" name="longitude" value="<%= location['longitude'] %>">
   </div>
 
     <button>Update Location</button>
@@ -154,7 +154,7 @@
       <span class="weather-API">Weather type = <%= weather['list'][0]['weather'][0]['main'] %> </span>
       <span class="weather-API"> : <%= weather['list'][0]['weather'][0]['description'] %> </span>
     </div>
-      <div class="weather-API"> Current coordinates: <%= weather['city']['coord'] %> </div>
+      <div class="weather-API"> Current coordinates: <%= weather['city']['name'] %> </div>
   </Section>
 </div>
 

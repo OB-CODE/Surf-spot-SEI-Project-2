@@ -3,14 +3,13 @@ get '/' do
   # current default city set to SYD
   weather =HTTParty.get("http://api.openweathermap.org/data/2.5/forecast?lat=-33.87&lon=151.21&appid=#{ENV['OPEN_WEATHER_API_KEY']}&units=metric&cnt=4")
 
-  # user_location =HTTParty.get("http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=#{ENV['OPEN_WEATHER_API_KEY']}")
 
   locations = all_locations()
 
   erb :'surf/index', locals: {
     locations: locations,
     weather: weather
-    # user_location: user_location
+        # user_location: user_location
   }
   end
 
@@ -62,9 +61,13 @@ get '/surf/:id/spot' do
   id = params['id']
   spot = get_spot(id)
 
+  spot_weather =HTTParty.get("http://api.openweathermap.org/data/2.5/forecast?lat=#{spot[0]['latitude']}&lon=#{spot[0]['longitude']}&appid=#{ENV['OPEN_WEATHER_API_KEY']}&units=metric&cnt=4")
+
+
   erb :'surf/spot', locals: {
     weather: weather,
-    spot: spot
+    spot: spot,
+    spot_weather: spot_weather
   }
 end
 

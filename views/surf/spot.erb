@@ -85,39 +85,40 @@
 
 
 <div class ="flex_right">
-  <span>Weather at: </span><div> <%= weather['city']['name'] %> </div>
+  <span>Weather at: </span><div> <%= spot_weather['city']['name'] %> </div>
 </div>
 
+<div><%= spot[0]['latitude'] %></div>
 
 <%# Weather for the CURRENT PAGE SPOT %>
 
 
 <div class="grid">
   <div>
-     <div class="weather-API">Forecast Time = <%= weather['list'][0]['dt_txt']%></div>
-      <div class="weather-API">Max Temp = <%= weather['list'][0]['main']['temp_max'] %> degrees celsius</div>
-      <div class="weather-API">Min Temp = <%= weather['list'][0]['main']['temp_min'] %> degrees celsius</div>
-      <div class="weather-API">Weather type = <%= weather['list'][0]['weather'][0]['main'] %></div>
-      <div class="weather-API">Weather detial = <%= weather['list'][0]['weather'][0]['description'] %> </div>
-      <div class="weather-API"> Wind speed = <%= weather['list'][0]['wind']['speed'] %> Km/h</div>
+     <div class="weather-API">Forecast Time = <%= spot_weather['list'][0]['dt_txt']%></div>
+      <div class="weather-API">Max Temp = <%= spot_weather['list'][0]['main']['temp_max'] %> degrees celsius</div>
+      <div class="weather-API">Min Temp = <%= spot_weather['list'][0]['main']['temp_min'] %> degrees celsius</div>
+      <div class="weather-API">Weather type = <%= spot_weather['list'][0]['weather'][0]['main'] %></div>
+      <div class="weather-API">Weather detial = <%= spot_weather['list'][0]['weather'][0]['description'] %> </div>
+      <div class="weather-API"> Wind speed = <%= spot_weather['list'][0]['wind']['speed'] %> Km/h</div>
   </div>
 
   <div>
-     <div class="weather_API_spot">Forecast Time = <%= weather['list'][1]['dt_txt']%></div>
-      <div class="weather_API_spot">Max Temp = <%= weather['list'][1]['main']['temp_max']%> degrees celsius</div>
-      <div class="weather_API_spot">Min Temp = <%= weather['list'][1]['main']['temp_min']%> degrees celsius</div>
-      <div class="weather_API_spot">Weather type = <%= weather['list'][1]['weather'][0]['main']%></div>
-      <div class="weather_API_spot">Weather detial = <%= weather['list'][1]['weather'][0]['description']%> </div>
-      <div class="weather-API"> Wind speed = <%= weather['list'][1]['wind']['speed']%> Km/h</div>
+     <div class="weather_API_spot">Forecast Time = <%= spot_weather['list'][1]['dt_txt']%></div>
+      <div class="weather_API_spot">Max Temp = <%= spot_weather['list'][1]['main']['temp_max']%> degrees celsius</div>
+      <div class="weather_API_spot">Min Temp = <%= spot_weather['list'][1]['main']['temp_min']%> degrees celsius</div>
+      <div class="weather_API_spot">Weather type = <%= spot_weather['list'][1]['weather'][0]['main']%></div>
+      <div class="weather_API_spot">Weather detial = <%= spot_weather['list'][1]['weather'][0]['description']%> </div>
+      <div class="weather-API"> Wind speed = <%= spot_weather['list'][1]['wind']['speed']%> Km/h</div>
   </div>
 
   <div>
-     <div class="weather_API_spot">Forecast Time = <%= weather['list'][3]['dt_txt']%></div>
-      <div class="weather_API_spot">Max Temp = <%= weather['list'][3]['main']['temp_max']%> degrees celsius</div>
-      <div class="weather_API_spot">Min Temp = <%= weather['list'][3]['main']['temp_min']%> degrees celsius</div>
-      <div class="weather_API_spot">Weather type = <%= weather['list'][3]['weather'][0]['main']%></div>
-      <div class="weather_API_spot">Weather detial = <%= weather['list'][3]['weather'][0]['description']%> </div>
-      <div class="weather-API"> Wind speed = <%= weather['list'][3]['wind']['speed']%> Km/h</div>
+     <div class="weather_API_spot">Forecast Time = <%= spot_weather['list'][3]['dt_txt']%></div>
+      <div class="weather_API_spot">Max Temp = <%= spot_weather['list'][3]['main']['temp_max']%> degrees celsius</div>
+      <div class="weather_API_spot">Min Temp = <%= spot_weather['list'][3]['main']['temp_min']%> degrees celsius</div>
+      <div class="weather_API_spot">Weather type = <%= spot_weather['list'][3]['weather'][0]['main']%></div>
+      <div class="weather_API_spot">Weather detial = <%= spot_weather['list'][3]['weather'][0]['description']%> </div>
+      <div class="weather-API"> Wind speed = <%= spot_weather['list'][3]['wind']['speed']%> Km/h</div>
   </div>
 
 </div>
