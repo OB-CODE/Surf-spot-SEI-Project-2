@@ -12,7 +12,7 @@ get '/' do
     weather: weather
     # user_location: user_location
   }
-end
+  end
 
 get '/surf/new' do
   weather =HTTParty.get("http://api.openweathermap.org/data/2.5/forecast?lat=-33.87&lon=151.21&appid=#{ENV['OPEN_WEATHER_API_KEY']}&units=metric&cnt=4")
@@ -53,6 +53,18 @@ get '/surf/:id/edit' do
   erb :'surf/edit', locals: {
     location: location,
     weather: weather
+  }
+end
+
+get '/surf/:id/spot' do
+  weather =HTTParty.get("http://api.openweathermap.org/data/2.5/forecast?lat=-33.87&lon=151.21&appid=#{ENV['OPEN_WEATHER_API_KEY']}&units=metric&cnt=4")
+
+  id = params['id']
+  spot = get_spot(id)
+
+  erb :'surf/spot', locals: {
+    weather: weather,
+    spot: spot
   }
 end
 

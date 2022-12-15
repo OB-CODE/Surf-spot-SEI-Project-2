@@ -18,3 +18,7 @@ end
 def delete_location(id)
   run_sql("DELETE FROM locations WHERE id = $1", [id])
 end
+
+def get_spot(id)
+  run_sql("SELECT * FROM locations WHERE id = $1", [id])
+end

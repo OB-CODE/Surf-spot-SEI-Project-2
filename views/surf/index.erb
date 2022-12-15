@@ -71,7 +71,7 @@
 
     <div class="right_controls">
     <button>Sort by Top rated</button>
-    <button>Sort by Distance</button>
+    <button>Sort by Default</button>
     </div>
   </div>
 
@@ -85,38 +85,43 @@
       <section class="spot">
         <header>
           <h2><%= spot['name'] %></h2>
+            <section class="each_spot_controls">
+              <% if logged_in? %>
+                      <%# This will be only for ADMIN  - Need to get If ADMIN working%>
+
+              <a href="/surf/<%= spot['id'] %>/edit">Edit</a>
+              
+              <form action="/surf/<%= spot['id'] %>" method="POST">
+                <input type="hidden" name="_method" value="delete">
+                <button>Delete</button>
+              </form>
+              <% end %>
 
 
-        <section class="each_spot_controls">
-          <% if logged_in? %>
-                  <%# This will be only for ADMIN  - Need to get If ADMIN working%>
-
-          <a href="/surf/<%= spot['id'] %>/edit">Edit</a>
-          
-          <form action="/surf/<%= spot['id'] %>" method="POST">
-            <input type="hidden" name="_method" value="delete">
-            <button>Delete</button>
-          </form>
-          <% end %>
-
-
-        <% if logged_in? %>
-          <form action="/surf/<%= spot['id'] %>/likes" method="POST">
-          <button>Like</button>
-          </form>
-        <% end %>
-
-        </section>
-
+            <% if logged_in? %>
+              <form action="/surf/<%= spot['id'] %>/likes" method="POST">
+              <button>Like</button>
+              </form>
+            <% end %>
+          </section>
         </header>
 
-        <img src="<%= spot['image_url'] %>" alt="">
-        <div>(1 Beginner to 10 Expert) = <%= spot['surf_experience'] %></div>
-        <div>Expected Crowd: <%= spot['crowd'] %></div>
-        <div>Hazards to watch out for: <%= spot['hazards'] %></div>
-        <div>Getting to the beach: <%= spot['access'] %></div>
-        <div>You are surfing on: <%= spot['ocean_bottom'] %></div>
-      </section>
+      <div class="div_to_link">
+          <img src="<%= spot['image_url'] %>" alt="">
+
+          <div class="spot_bot_container">
+            <div class="middle_top_heading">Brief Description</div>
+              <div>Location: </div>
+              <div>(1 Beginner to 10 Expert) = <%= spot['surf_experience'] %></div>
+              <div>Expected Crowd: <%= spot['crowd'] %></div>
+              <div>Hazards to watch out for: <%= spot['hazards'] %></div>
+              <div>Getting to the beach: <%= spot['access'] %></div>
+              <div>You are surfing on: <%= spot['ocean_bottom'] %></div>
+            </div>
+          <a id="end" href="surf/<%= spot['id'] %>/spot"></a>
+          <a class="push_right" href="surf/<%= spot['id'] %>/spot">... Click for more info</a>
+        </section>
+      </div>
     <% end %>
   </section>
 

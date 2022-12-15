@@ -1,0 +1,75 @@
+<div class="header-container">
+  <div class="header-touch-bar">
+    <div class="grey-back">
+      <p>Click here for a description of how to use Surf Spot and what it means to be a member.</p> 
+      <p class="hidden-sponsor">For information on how to become a larger contributor, contact us here.</p>
+    </div>
+    <div class="logo-container">
+      <div class="header-grid">
+        <div class="left-head-col">
+           <div class="location-pin"></div>
+           <div class='coord'><%= weather['city']['name'] %></div>
+        </div>
+        <div class="middle-head-col">
+          <p>Surf Spot</p>
+        </div>
+
+        <% if !logged_in? %>
+         <div class="right-head-col">
+            <a href="/sessions/new" class="log_in">LOG IN</a> 
+        </div>
+        <% end %>
+
+        <% if logged_in? %>
+          <div class="right-head-col-spaced">
+            <div> Welcome: <%= current_user['first_name'] %> </div>
+              <section>
+                <form action="/sessions" method="POST">
+                  <input type="hidden" name="_method" value="delete">
+                  <button id="logOut">Log out</button>
+                </form>
+              </section>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="black-back">
+      <p class="catch-phrase">Surf spots rated by the community, for the community!</p>
+    </div>
+    <div class="links">
+      <div class="weather">  <section class="weather-API">Temp = <%= weather['list'][0]['main']['temp']%> degrees celsius</section>
+      </div>
+      <a href="" class="set-location">SET YOUR LOCATION</a>
+      <a href="/" class="locations">FIND A SURF SPOT</a>
+      <a href="/surf/boards" class="boards">SURFBOARDS</a>
+      <a href="/users/new" class="sign-up">SIGN UP</a>
+    </div>
+  </div>
+</div>
+
+
+
+<header class="default">
+
+  <div class ="index_header">
+    <img class ="index_header" src="<%= spot[0]['image_url'] %>" alt="">
+      <div class="top-box">
+          <div class="thumbnail-text">Website Created By: Mitchell O'Brien</div>
+          <div class="thumbnail-text-2">GA: Software Engineer Student</div>
+      </div>
+    <div class="bot-box">
+          <div class="thumbnail-text-bot">Follow the PROJECT on GitHub <a href="https://github.com/OB-CODE/Surf-spot-SEI-Project-2">HERE</a> </div>
+      </div>
+  </div>
+</header>
+
+<main>
+<h1>SURF SPOT: 
+  <div><%= spot[0]['name'] %></div>
+</h1>
+<div><%= spot[0]['surf_experience'] %></div>
+<div><%= spot[0]['crowd'] %></div>
+<div><%= spot[0]['hazards'] %></div>
+<div><%= spot[0]['access'] %></div>
+<div><%= spot[0]['ocean_bottom'] %></div>
+</main>
