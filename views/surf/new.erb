@@ -67,17 +67,22 @@
 
 <div class="sign_up_style">
 
-  <h1>Add Surf Spot</h1>
+  <h4>Add Surf Spot</h4>
 
   <form action="/surf" method="POST">
+  <div>
     <label for="">Location Name of surf spot: </label>
     <input type="text" name="name">
+  </div>
 
+  <div>
     <label for="">Location Image URL: </label>
     <input type="text" name="image_url">
+  </div>
+   
 
   <div id='together'>
-    <label for="exp">Surf experience required: (1 Beginner to 10 Expert)</label>
+    <label for="exp">Surf experience required for location: (1 Beginner to 10 Expert)</label>
     <select name="surf_experience" id="exp">
       <option value="1">1</option>
       <option value="2">2</option>
@@ -103,11 +108,15 @@
     </select>
   </div>
 
-    <label for="">Hazards at spot</label>
-    <input type="text" name="hazards">
+  <div>
+      <label for="">Hazards at spot</label>
+      <input type="text" name="hazards">
+  </div>
   
+  <div>
     <label for="">Access to the water</label>
     <input type="text" name="access">
+  </div>
 
   <div id='together'>
     <label for="formation">What are the waves formed on?</label>

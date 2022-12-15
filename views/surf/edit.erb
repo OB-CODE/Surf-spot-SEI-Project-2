@@ -1,50 +1,150 @@
-<h1>EDIT Surf Spot</h1>
+<div class="header-container">
+  <div class="header-touch-bar">
+    <div class="grey-back">
+      <p>Click here for a description of how to use Surf Spot and what it means to be a member.</p> 
+      <p class="hidden-sponsor">For information on how to become a larger contributor, contact us here.</p>
+    </div>
+    <div class="logo-container">
+      <div class="header-grid">
+        <div class="left-head-col">
+           <div class="location-pin"></div>
+            <div class='coord'><%= weather['city']['name'] %></div>
 
-<form action="/surf/<%= location['id'] %>" method="POST">
-  <input type="hidden" name="_method" value="put">
+        </div>
+        <div class="middle-head-col">
+          <p>Surf Spot</p>
+        </div>
 
-  <label for="">Name: </label>
-  <input type="text" name="name" value="<%= location['name'] %>">
+        <% if !logged_in? %>
+         <div class="right-head-col">
+            <a href="/sessions/new" class="log_in">LOG IN</a> 
+        </div>
+        <% end %>
 
-  <label for="">Image URL: </label>
-  <input type="text" name="image_url" value="<%= location['image_url'] %>">
-
-  <label for="exp">Surf experience required: (1 Beginner to 10 Expert)</label>
-  <select name="surf_experience" value="<%= location['surf_experience'] %>">
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="6">6</option>
-    <option value="7">7</option>
-    <option value="8">8</option>
-    <option value="9">9</option>
-    <option value="10">10</option>
-  </select>
-
-  <label for="crowd">Average Crowd </label>
-  <select name="crowd" id="crowd" value="<%= location['crowd'] %>">
-    <option value="Isolated">Isolated</option>
-    <option value="Quiet">Quiet</option>
-    <option value="Average">Average</option>
-    <option value="Busy">Busy</option>
-    <option value="PACKED">PACKED!</option>
-  </select>
-
-  <label for="">Hazards at spot</label>
-  <input type="text" name="hazards" value="<%= location['hazards'] %>">
- 
-  <label for="">Access to the water</label>
-  <input type="text" name="access" value="<%= location['access'] %>">
-
-  <label for="">What are the waves formed on?</label>
-  <input type="text" name="ocean_bottom" value="<%= location['ocean_bottom'] %>">
-
-  <button>Update Location</button>
-</form>
+        <% if logged_in? %>
+          <div class="right-head-col-spaced">
+            <div> Welcome: <%= current_user['first_name'] %> </div>
+              <section>
+                <form action="/sessions" method="POST">
+                  <input type="hidden" name="_method" value="delete">
+                  <button id="logOut">Log out</button>
+                </form>
+              </section>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="black-back">
+      <p class="catch-phrase">Surf spots rated by the community, for the community!</p>
+    </div>
+    <div class="links">
+          <div class="weather">  <section class="weather-API">Temp = <%= weather['list'][0]['main']['temp']%> degrees celsius</section>
+      </div>
+      <a href="" class="set-location">SET YOUR LOCATION</a>
+      <a href="/" class="locations">FIND A SURF SPOT</a>
+      <a href="/surf/boards" class="boards">SURFBOARDS</a>
+      <a href="/users/new" class="sign-up">SIGN UP</a>
+    </div>
+  </div>
+</div>
 
 
+
+<header class="default">
+
+  <div class ="index_header">
+    <img class ="index_header" src="https://images.unsplash.com/photo-1477457544701-4652306aa2df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2662&q=80" alt="">
+      <div class="top-box">
+          <div class="thumbnail-text-white">Website Created By: Mitchell O'Brien</div>
+          <div class="thumbnail-text-2-white">GA: Software Engineer Student</div>
+      </div>
+    <div class="bot-box">
+          <div class="thumbnail-text-bot">Follow the PROJECT on GitHub <a href="https://github.com/OB-CODE/Surf-spot-SEI-Project-2">HERE</a> </div>
+      </div>
+  </div>
+</header>
+
+
+<div class="sign_up_style">
+
+<h4>EDIT Surf Spot</h4>
+
+  <form action="/surf/<%= location['id'] %>" method="POST">
+    <input type="hidden" name="_method" value="put">
+
+    <div>
+      <label for="">Location Name of surf spot: </label>
+      <input type="text" name="name" value="<%= location['name'] %>">
+    </div>
+
+    <div>
+      <label for="">Location Image URL: </label>
+      <input type="text" name="image_url" value="<%= location['image_url'] %>">
+    </div>
+
+    <div id='together'>
+      <label for="exp">Surf experience required for location: (1 Beginner to 10 Expert)</label>
+      <select name="surf_experience" value="<%= location['surf_experience'] %>">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </div>
+
+    <div id='together'>
+      <label for="crowd">Average Crowd </label>
+      <select name="crowd" id="crowd" value="<%= location['crowd'] %>">
+        <option value="Isolated">Isolated</option>
+        <option value="Quiet">Quiet</option>
+        <option value="Average">Average</option>
+        <option value="Busy">Busy</option>
+        <option value="PACKED">PACKED!</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="">Hazards at spot</label>
+      <input type="text" name="hazards" value="<%= location['hazards'] %>">
+    </div>
+
+    <div>
+      <label for="">Access to the water</label>
+      <input type="text" name="access" value="<%= location['access'] %>">
+    </div>
+
+    <div id='together'>
+      <label for="">What are the waves formed on?</label>
+      <select name="ocean_bottom" id="formation value="<%= location['ocean_bottom'] %>">
+        <option value="Sand">Sand</option>
+        <option value="Rock">Rock</option>
+        <option value="Reef">Reef</option>
+    <div>
+
+    <button>Update Location</button>
+  </form>
+</div>
+
+
+<div class="weather_container">
+  <Section class="overlap_weather">
+  <h4>CURRENT WEATHER</h4>
+    <div class="weather-API">Current Temp = <%= weather['list'][0]['main']['temp']%> degrees celsius</div>
+    <div class="weather-API">Feels like Temp = <%= weather['list'][0]['main']['feels_like']%> degrees celsius</div>
+
+    <div>
+      <span class="weather-API">Weather type = <%= weather['list'][0]['weather'][0]['main'] %> </span>
+      <span class="weather-API"> : <%= weather['list'][0]['weather'][0]['description'] %> </span>
+    </div>
+      <div class="weather-API"> Current coordinates: <%= weather['city']['coord'] %> </div>
+  </Section>
+</div>
 
 
 

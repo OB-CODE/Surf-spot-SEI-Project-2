@@ -40,6 +40,8 @@ end
 
 
 get '/surf/:id/edit' do
+  weather =HTTParty.get("http://api.openweathermap.org/data/2.5/forecast?lat=-33.87&lon=151.21&appid=#{ENV['OPEN_WEATHER_API_KEY']}&units=metric&cnt=4")
+
   if !logged_in?
     redirect '/'
   end
@@ -49,7 +51,8 @@ get '/surf/:id/edit' do
   location = get_locations(id)
 
   erb :'surf/edit', locals: {
-    location: location
+    location: location,
+    weather: weather
   }
 end
 
