@@ -1,4 +1,4 @@
-# fly.toml file generated for surf on 2022-12-14T22:25:28+11:00
+# fly.toml file generated for surf on 2022-12-16T10:13:29+11:00
 
 app = "surf"
 kill_signal = "SIGINT"
