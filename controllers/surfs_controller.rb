@@ -81,8 +81,10 @@ put '/surf/:id' do
   hazards = params['hazards']
   access = params['access']
   ocean_bottom = params['ocean_bottom']
+  latitude = params['latitude']
+  longitude = params['longitude']
 
-  update_location(id, name, image_url, surf_experience, crowd, hazards, access, ocean_bottom)
+  update_location(id, name, image_url, surf_experience, crowd, hazards, access, ocean_bottom, latitude, longitude)
 
   # We ALWAYS redirect the user at the end of a POST, PUT or DELETE method.
   redirect '/'

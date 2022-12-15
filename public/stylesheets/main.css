@@ -582,3 +582,12 @@ span {
   justify-items: center;
   text-align: center;
 }
+
+.explination {
+  margin: 50px;
+  font-size: 1.2rem;
+}
+
+#green_back {
+  background-color: rgb(190, 249, 190);
+}

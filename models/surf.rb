@@ -10,9 +10,9 @@ def get_locations(id)
   run_sql('SELECT * FROM locations WHERE id = $1', [id])[0]
 end 
 
-def update_location(id, name, image_url, surf_experience, crowd, hazards, access, ocean_bottom)
-  run_sql("UPDATE locations SET name = $2, image_url = $3, surf_experience = $4, crowd = $5, hazards = $6, access = $7, ocean_bottom = $8
-    WHERE id = $1", [id, name, image_url, surf_experience, crowd, hazards, access, ocean_bottom])
+def update_location(id, name, image_url, surf_experience, crowd, hazards, access, ocean_bottom, latitude, longitude)
+  run_sql("UPDATE locations SET name = $2, image_url = $3, surf_experience = $4, crowd = $5, hazards = $6, access = $7, ocean_bottom = $8, latitude = $9, longitude = $10
+    WHERE id = $1", [id, name, image_url, surf_experience, crowd, hazards, access, ocean_bottom, latitude, longitude])
 end
 
 def delete_location(id)
