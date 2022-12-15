@@ -1,5 +1,9 @@
 get '/users/new' do
-  erb :'users/new'
+  weather =HTTParty.get("http://api.openweathermap.org/data/2.5/forecast?lat=-33.87&lon=151.21&appid=#{ENV['OPEN_WEATHER_API_KEY']}&units=metric")
+
+  erb :'users/new', locals: {
+      weather: weather
+  }
 end
 
 

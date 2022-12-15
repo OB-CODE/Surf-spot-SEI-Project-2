@@ -1,31 +1,53 @@
 <div class="header-container">
   <div class="header-touch-bar">
+    <div class="grey-back">
+      <p>Click here for a description of how to use Surf Spot and what it means to be a member.</p> 
+      <p class="hidden-sponsor">For information on how to become a larger contributor, contact us here.</p>
+    </div>
     <div class="logo-container">
       <div class="header-grid">
         <div class="left-head-col">
            <div class="location-pin"></div>
+            <div class='coord'><%= weather['city']['coord'] %></div>
+
         </div>
         <div class="middle-head-col">
           <p>Surf-Spot</p>
         </div>
-        <div class="weather">Today's forcast:</div>
-        <div class="right-head-col">
-           <a href="" class="log-in">LOG IN</a> 
+
+        <% if !logged_in? %>
+         <div class="right-head-col">
+            <a href="/sessions/new" class="log_in">LOG IN</a> 
         </div>
+        <% end %>
+
+        <% if logged_in? %>
+          <div class="right-head-col-spaced">
+            <div> Welcome: <%= current_user['first_name'] %> </div>
+              <section>
+                <form action="/sessions" method="POST">
+                  <input type="hidden" name="_method" value="delete">
+                  <button id="logOut">Log out</button>
+                </form>
+              </section>
+          </div>
+        <% end %>
       </div>
     </div>
     <div class="black-back">
-      <p class="catch-phrase">SIGN UP BELOW TO BECOME A MEMBER - DON'T FORGET TO LIKE AND REVIEW!</p>
+      <p class="catch-phrase">Surf spots rated by the community, for the community!</p>
     </div>
     <div class="links">
-      <div class="weather">Today's forcast:</div>
+          <div class="weather">  <section class="weather-API">Temp = <%= weather['list'][0]['main']['temp']%> degrees celsius</section>
+      </div>
       <a href="" class="set-location">SET YOUR LOCATION</a>
       <a href="/" class="locations">FIND A SURF SPOT</a>
-      <a href="" class="boards">SURFBOARDS</a>
+      <a href="/surf/boards" class="boards">SURFBOARDS</a>
       <a href="/users/new" class="sign-up">SIGN UP</a>
     </div>
   </div>
 </div>
+
 
 
 <header class="default">
@@ -41,6 +63,7 @@
       </div>
   </div>
 </header>
+
 
 <main>
 
@@ -69,5 +92,27 @@
     </form>
 
   </div>
+
+
+<div class="weather_container">
+  <Section class="overlap_weather">
+  <h1>CURRENT WEATHER</h1>
+    <div class="weather-API">Current Temp = <%= weather['list'][0]['main']['temp']%> degrees celsius</div>
+    <div class="weather-API">Feels like Temp = <%= weather['list'][0]['main']['feels_like']%> degrees celsius</div>
+
+    <div>
+      <span class="weather-API">Weather type = <%= weather['list'][0]['weather'][0]['main'] %> </span>
+      <span class="weather-API"> : <%= weather['list'][0]['weather'][0]['description'] %> </span>
+    </div>
+      <div class="weather-API"> Current coordinates: <%= weather['city']['coord'] %> </div>
+  </Section>
+</div>
+
+  <div class="triple_img">
+    <img src="https://images.unsplash.com/photo-1523606772308-64a28db0ef2c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1364&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1510343100762-48b7bc609c62?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1569340444999-e24594d75869?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" alt="">
+  </div>
+
 
 </main>
