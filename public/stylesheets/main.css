@@ -57,7 +57,7 @@ body {
         .coord {
           display: flex;
           padding-left: 20px;
-          font-size: 0.6rem;
+          font-size: 1.2rem;
           align-items: center;
         }
         .location-pin::after {
@@ -410,7 +410,7 @@ button {
 }
 /* For the sign up page */
 
-.sing_up_style {
+.sign_up_style {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -418,25 +418,34 @@ button {
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.sing_up_style form {
+.sign_up_style form {
   display: flex;
   flex-direction: column;
 }
-.sing_up_style input {
+.sign_up_style input {
   width: 300px;
 }
 
 @media screen and (min-width: 1100px) {
-  .sing_up_style input {
+  .sign_up_style input {
     width: 600px;
   }
 }
 
-.sing_up_style div {
+.sign_up_style div {
   display: flex; 
   justify-content: space-between;
   gap: 10px;
   padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+#together {
+  display: flex; 
+  justify-content: center;
+  gap: 10px;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 
@@ -466,3 +475,8 @@ button {
   }   
 }
 
+input {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 7px;
+}

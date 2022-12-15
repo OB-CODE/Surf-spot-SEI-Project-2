@@ -8,7 +8,7 @@
       <div class="header-grid">
         <div class="left-head-col">
            <div class="location-pin"></div>
-           <div class='coord'><%= weather['city']['coord'] %></div>
+           <div class='coord'><%= weather['city']['name'] %></div>
         </div>
         <div class="middle-head-col">
           <p>Surf Spot</p>
@@ -130,7 +130,7 @@
       <span class="weather-API">Weather type = <%= weather['list'][0]['weather'][0]['main'] %> </span>
       <span class="weather-API"> : <%= weather['list'][0]['weather'][0]['description'] %> </span>
     </div>
-      <div class="weather-API"> Current coordinates: <%= weather['city']['coord'] %> </div>
+      <div class="weather-API"> Current City: <%= weather['city']['name'] %> </div>
   </Section>
 </div>
 

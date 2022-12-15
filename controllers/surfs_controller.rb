@@ -15,7 +15,11 @@ get '/' do
 end
 
 get '/surf/new' do
-  erb :'surf/new'
+  weather =HTTParty.get("http://api.openweathermap.org/data/2.5/forecast?lat=-33.87&lon=151.21&appid=#{ENV['OPEN_WEATHER_API_KEY']}&units=metric&cnt=4")
+
+  erb :'surf/new', locals: {
+    weather: weather
+  }
 end
 
 post '/surf' do
