@@ -1,12 +1,16 @@
 get '/' do
-  # API to remove later
-  movie = HTTParty.get("http://omdbapi.com?apikey=#{ENV['OMDB_API_KEY']}&t=jaws")
+
+  # current default city set to SYD
+  weather =HTTParty.get("http://api.openweathermap.org/data/2.5/forecast?lat=33.87&lon=151.21&appid=#{ENV['OPEN_WEATHER_API_KEY']}&units=metric&cnt=1")
+
+  # user_location =HTTParty.get("http://api.openweathermap.org/geo/1.0/direct?q=London&limit=5&appid=#{ENV['OPEN_WEATHER_API_KEY']}")
 
   locations = all_locations()
 
   erb :'surf/index', locals: {
     locations: locations,
-    movie_plot: movie['Plot']
+    weather: weather
+    # user_location: user_location
   }
 end
 
@@ -79,4 +83,8 @@ post '/surf/:id/likes' do
 
   run_sql("INSERT INTO likes(user_id, spot_id) VALUES($1, $2)", [user_id, spot_id])
   redirect '/'
+end
+
+get '/surf/boards' do
+  erb :'surf/boards'
 end

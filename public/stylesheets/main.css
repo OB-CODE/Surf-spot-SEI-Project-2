@@ -52,6 +52,13 @@ body {
         position:relative ;
         transform: rotate(45deg);
       }
+
+        .coord {
+          display: flex;
+          padding-left: 20px;
+          font-size: 0.6rem;
+          align-items: center;
+        }
         .location-pin::after {
           content: "" ;
           width: 20px ;
@@ -225,10 +232,19 @@ body {
     color: rgb(77, 44, 8);
     text-transform: uppercase;
   }
-  .left-head-col::after {
-    content: "Your location: ";
+  .coord {
+    display: flex;
     padding-left: 20px;
+    font-size: 0.6rem;
+    align-items: center;
+    font-size: 1.3rem;
   }
+
+  .left-head-col::before {
+    content: "Your location: ";
+    padding-right: 20px;
+    font-size: 1.5rem;
+    }
   .weather {
     display: flex;
     display: flex 1;
@@ -311,12 +327,22 @@ main {
   margin-top: 1.5rem;
 }
 
+@media screen and (min-width: 1200px) {
+  .surf_spots {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 1.25rem;
+    /* rem is % the default. Approx base is 16px so rem 1.25 is approx 20px */
+    margin-top: 1.5rem;
+  }
+}
+
 .spot header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: .6rem;
-  background-color: rgb(238, 229, 253);
+  background-color: rgb(249, 249, 242);
 }
 
 .surf_spots h2 {
@@ -385,3 +411,25 @@ button {
   align-items: flex-end;
   margin-right: 40%;
 }
+
+.weather_container {
+  background-image: url("https://images.unsplash.com/photo-1500964757637-c85e8a162699?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2403&q=80");
+  padding-bottom: 30px;
+  font-size: 1.5rem;
+  background-size: cover;
+}
+
+.img_container {
+  display: flex;
+}
+
+.overlap_weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 30px;
+  font-size: 1.5rem;
+}
+

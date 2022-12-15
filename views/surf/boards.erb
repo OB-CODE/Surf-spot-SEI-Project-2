@@ -1,0 +1,72 @@
+<div class="header-container">
+  <div class="header-touch-bar">
+    <div class="grey-back">
+      <p>Click here for a description of how to use Surf Spot and what it means to be a member.</p> 
+      <p class="hidden-sponsor">For information on how to become a larger contributor, contact us here.</p>
+    </div>
+    <div class="logo-container">
+      <div class="header-grid">
+        <div class="left-head-col">
+           <div class="location-pin"></div>
+        </div>
+        <div class="middle-head-col">
+          <p>Surf-Spot</p>
+        </div>
+
+        <% if !logged_in? %>
+         <div class="right-head-col">
+            <a href="/sessions/new" class="log_in">LOG IN</a> 
+        </div>
+        <% end %>
+
+        <% if logged_in? %>
+          <div class="right-head-col-spaced">
+            <div> Welcome: <%= current_user['first_name'] %> </div>
+              <section>
+                <form action="/sessions" method="POST">
+                  <input type="hidden" name="_method" value="delete">
+                  <button id="logOut">Log out</button>
+                </form>
+              </section>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="black-back">
+      <p class="catch-phrase">Surf spots rated by the community, for the community!</p>
+    </div>
+    <div class="links">
+      <div class="weather">Today's forcast:</div>
+      <a href="" class="set-location">SET YOUR LOCATION</a>
+      <a href="/" class="locations">FIND A SURF SPOT</a>
+      <a href="/surf/boards" class="boards">SURFBOARDS</a>
+      <a href="/users/new" class="sign-up">SIGN UP</a>
+    </div>
+  </div>
+</div>
+
+
+
+<header class="default">
+
+  <div class ="index_header">
+    <img class ="index_header" src="https://images.unsplash.com/photo-1471194494705-149b8e5f9a24?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80" alt="">
+      <div class="top-box">
+          <div class="thumbnail-text-white">Website Created By: Mitchell O'Brien</div>
+          <div class="thumbnail-text-2-white">GA: Software Engineer Student</div>
+      </div>
+    <div class="bot-box">
+          <div class="thumbnail-text-bot">Follow the PROJECT on GitHub <a href="https://github.com/OB-CODE/Surf-spot-SEI-Project-2">HERE</a> </div>
+      </div>
+  </div>
+</header>
+
+<main>
+  <h1>PAGE COMING SOON</h1>
+
+  <div class="triple_img">
+    <img src="https://images.unsplash.com/photo-1608880619984-49d0ad6e70a4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1302&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1588605800921-78dc67c62685?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1628997342702-3716c14c958d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1335&q=80" alt="">
+  </div>
+</main>

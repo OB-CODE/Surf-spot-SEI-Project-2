@@ -8,6 +8,7 @@
       <div class="header-grid">
         <div class="left-head-col">
            <div class="location-pin"></div>
+           <div class='coord'><%= weather['city']['coord'] %></div>
         </div>
         <div class="middle-head-col">
           <p>Surf-Spot</p>
@@ -36,10 +37,11 @@
       <p class="catch-phrase">Surf spots rated by the community, for the community!</p>
     </div>
     <div class="links">
-      <div class="weather">Today's forcast:</div>
+      <div class="weather">  <section class="weather-API">Temp = <%= weather['list'][0]['main']['temp']%> degrees celsius</section>
+      </div>
       <a href="" class="set-location">SET YOUR LOCATION</a>
       <a href="/" class="locations">FIND A SURF SPOT</a>
-      <a href="" class="boards">SURFBOARDS</a>
+      <a href="/surf/boards" class="boards">SURFBOARDS</a>
       <a href="/users/new" class="sign-up">SIGN UP</a>
     </div>
   </div>
@@ -118,8 +120,22 @@
     <% end %>
   </section>
 
+<div class="weather_container">
+  <Section class="overlap_weather">
+  <h1>WEATHER FORCAST</h1>
+    <div class="weather-API">Current Temp = <%= weather['list'][0]['main']['temp']%> degrees celsius</div>
+    <div class="weather-API">Feels like Temp = <%= weather['list'][0]['main']['feels_like']%> degrees celsius</div>
 
-  <section class="movie-plot"><%= movie_plot %></section>
+    <div>
+      <span class="weather-API">Weather type = <%= weather['list'][0]['weather'][0]['main'] %> </span>
+      <span class="weather-API"> : <%= weather['list'][0]['weather'][0]['description'] %> </span>
+    </div>
+      <div class="weather-API"> Current coordinates: <%= weather['city']['coord'] %> </div>
+  </Section>
+</div>
+
+
+
 
 </main>
 

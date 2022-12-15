@@ -14,11 +14,11 @@ CREATE TABLE locations(
 
 INSERT INTO locations(name, image_url, surf_experience, crowd, hazards, access, ocean_bottom)
 VALUES
-('Maroubrah', 'https://maps.randwick.nsw.gov.au/public/images/facilities/Maroubra-Beach-768x250.jpg', '5', 'busy', 'rocks and rip at south end, scattered rocks at north end. Heavy beach break with agressive impact zone.', 'Road access, multiple parking sport inclduing free parking', 'Beack break - sand');
+('Maroubrah', 'https://maps.randwick.nsw.gov.au/public/images/facilities/Maroubra-Beach-768x250.jpg', '5', 'busy', 'rocks and rip at south end, scattered rocks at north end. Heavy beach break with agressive impact zone.', 'Road access, multiple parking sport inclduing free parking', 'Beach break - sand');
 
 INSERT INTO locations(name, image_url, surf_experience, crowd, hazards, access, ocean_bottom)
 VALUES
-('Mollymook Beach', 'https://assets.atdw-online.com.au/images/8eb51be22a935b6933b0f00b4174104f.jpeg?rect=0,192,2048,1152&w=1600&h=900&rot=360', '3', 'busy', 'Some rocks throughout - nothing really to worry about. The middle of the beach can get a big larger swell with both the south and north ends protected via headlands.', 'Road access throughout, free parking along the whole beach', 'Beack break - sand');
+('Mollymook Beach', 'https://assets.atdw-online.com.au/images/8eb51be22a935b6933b0f00b4174104f.jpeg?rect=0,192,2048,1152&w=1600&h=900&rot=360', '3', 'busy', 'Some rocks throughout - nothing really to worry about. The middle of the beach can get a big larger swell with both the south and north ends protected via headlands.', 'Road access throughout, free parking along the whole beach', 'Beach break - sand');
 
 INSERT INTO locations(name, image_url, surf_experience, crowd, hazards, access, ocean_bottom)
 VALUES
