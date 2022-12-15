@@ -533,3 +533,52 @@ input {
   margin-top: 5px;
   margin-bottom: 7px;
 }
+
+/* CSS for SPOT pages */
+
+.spot_wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: rgb(238, 240, 242);
+}
+span {
+  font-weight: bold;
+}
+
+.spot_filler {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.spot_images {
+  max-width: 60%;
+}
+
+.spot_images > * {
+  display: inline;
+  max-width: 45%;
+}
+
+.flex_right {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.grid {
+  padding-top: 20px;
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  background-color: rgb(249, 242, 230);
+}
+
+.grid div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+}

@@ -67,9 +67,75 @@
 <h1>SURF SPOT: 
   <div><%= spot[0]['name'] %></div>
 </h1>
-<div><%= spot[0]['surf_experience'] %></div>
-<div><%= spot[0]['crowd'] %></div>
-<div><%= spot[0]['hazards'] %></div>
-<div><%= spot[0]['access'] %></div>
-<div><%= spot[0]['ocean_bottom'] %></div>
+
+
+<div class="spot_filler">
+  <div class ="spot_wrapper">
+    <div><span>Surf experience required for location: (1 Beginner to 10 Expert): </span><%= spot[0]['surf_experience'] %></div>
+    <div><span>Average Crowd: </span><%= spot[0]['crowd'] %></div>
+    <div><span>Hazards: </span><%= spot[0]['hazards'] %></div>
+    <div><span>Access: </span><%= spot[0]['access'] %></div>
+    <div><span>You will most likely be surfing on: </span><%= spot[0]['ocean_bottom'] %></div>
+  </div>
+  <div class="spot_images">
+    <img src="https://images.unsplash.com/photo-1625718008796-f580990ec51d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80" alt="">
+  <img src="https://images.unsplash.com/photo-1619509943800-81ce9ac042e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80" alt="">
+  </div>
+</div>
+
+
+<div class ="flex_right">
+  <span>Weather at: </span><div> <%= weather['city']['name'] %> </div>
+</div>
+
+
+<%# Weather for the CURRENT PAGE SPOT %>
+
+
+<div class="grid">
+  <div>
+     <div class="weather-API">Forecast Time = <%= weather['list'][0]['dt_txt']%></div>
+      <div class="weather-API">Max Temp = <%= weather['list'][0]['main']['temp_max'] %> degrees celsius</div>
+      <div class="weather-API">Min Temp = <%= weather['list'][0]['main']['temp_min'] %> degrees celsius</div>
+      <div class="weather-API">Weather type = <%= weather['list'][0]['weather'][0]['main'] %></div>
+      <div class="weather-API">Weather detial = <%= weather['list'][0]['weather'][0]['description'] %> </div>
+      <div class="weather-API"> Wind speed = <%= weather['list'][0]['wind']['speed'] %> Km/h</div>
+  </div>
+
+  <div>
+     <div class="weather_API_spot">Forecast Time = <%= weather['list'][1]['dt_txt']%></div>
+      <div class="weather_API_spot">Max Temp = <%= weather['list'][1]['main']['temp_max']%> degrees celsius</div>
+      <div class="weather_API_spot">Min Temp = <%= weather['list'][1]['main']['temp_min']%> degrees celsius</div>
+      <div class="weather_API_spot">Weather type = <%= weather['list'][1]['weather'][0]['main']%></div>
+      <div class="weather_API_spot">Weather detial = <%= weather['list'][1]['weather'][0]['description']%> </div>
+      <div class="weather-API"> Wind speed = <%= weather['list'][1]['wind']['speed']%> Km/h</div>
+  </div>
+
+  <div>
+     <div class="weather_API_spot">Forecast Time = <%= weather['list'][3]['dt_txt']%></div>
+      <div class="weather_API_spot">Max Temp = <%= weather['list'][3]['main']['temp_max']%> degrees celsius</div>
+      <div class="weather_API_spot">Min Temp = <%= weather['list'][3]['main']['temp_min']%> degrees celsius</div>
+      <div class="weather_API_spot">Weather type = <%= weather['list'][3]['weather'][0]['main']%></div>
+      <div class="weather_API_spot">Weather detial = <%= weather['list'][3]['weather'][0]['description']%> </div>
+      <div class="weather-API"> Wind speed = <%= weather['list'][3]['wind']['speed']%> Km/h</div>
+  </div>
+
+</div>
+
 </main>
+
+
+
+<div class="weather_container">
+  <Section class="overlap_weather">
+  <h4>CURRENT WEATHER </h4>
+    <div class="weather-API">Current Temp = <%= weather['list'][0]['main']['temp']%> degrees celsius</div>
+    <div class="weather-API">Feels like Temp = <%= weather['list'][0]['main']['feels_like']%> degrees celsius</div>
+
+    <div>
+      <span class="weather-API">Weather type = <%= weather['list'][0]['weather'][0]['main'] %> </span>
+      <span class="weather-API"> : <%= weather['list'][0]['weather'][0]['description'] %> </span>
+    </div>
+      <div class="weather-API"> Current City: <%= weather['city']['name'] %> </div>
+  </Section>
+</div>
