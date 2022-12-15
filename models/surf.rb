@@ -22,3 +22,4 @@ end
 def get_spot(id)
   run_sql("SELECT * FROM locations WHERE id = $1", [id])
 end
+
